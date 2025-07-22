@@ -1,0 +1,113 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Phone, Mail } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white p-6 font-sans">
+      <header className="flex items-center justify-between py-4 border-b border-gray-300">
+        <div className="flex items-center gap-4">
+          <img src="/credinest-logo.png" alt="Credinest Logo" className="h-12" />
+          <h1 className="text-2xl font-bold text-gray-800">Credinest</h1>
+        </div>
+        <nav className="flex gap-6 text-gray-600 font-medium">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#apply">Apply</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section className="text-center mt-12">
+        <h2 className="text-5xl font-extrabold text-gray-900">Empowering Your Financial Journey</h2>
+        <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          Partner with Credinest – your trusted DSA for personal, business, home, and education loans. Fast approvals, transparent service.
+        </p>
+        <Button className="mt-8 px-10 py-4 text-lg" onClick={() => window.location.href = '#apply'}>Apply for Loan</Button>
+      </section>
+
+      <section id="services" className="mt-24 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <Card className="shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6">
+            <CheckCircle className="text-green-600 mb-4" size={40} />
+            <h3 className="text-xl font-semibold">Personal Loans</h3>
+            <p className="text-gray-600 mt-2">Quick approvals with minimal documentation and competitive interest rates.</p>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6">
+            <CheckCircle className="text-blue-600 mb-4" size={40} />
+            <h3 className="text-xl font-semibold">Business Loans</h3>
+            <p className="text-gray-600 mt-2">Tailored financial solutions to grow your business efficiently.</p>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6">
+            <CheckCircle className="text-purple-600 mb-4" size={40} />
+            <h3 className="text-xl font-semibold">Home Loans</h3>
+            <p className="text-gray-600 mt-2">Affordable EMIs and seamless processing to help you buy your dream home.</p>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6">
+            <CheckCircle className="text-orange-600 mb-4" size={40} />
+            <h3 className="text-xl font-semibold">Education Loans</h3>
+            <p className="text-gray-600 mt-2">Get access to funding for higher education in India or abroad at low interest rates.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section id="about" className="mt-24 text-center">
+        <h2 className="text-3xl font-bold text-gray-800">Why Choose Credinest?</h2>
+        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          With a commitment to transparency, fast processing, and personalized customer service, Credinest is your go-to Loan DSA partner. We provide expert assistance for a wide range of financial needs — whether you're looking to expand your business, fund education, buy a home, or handle personal expenses.
+        </p>
+      </section>
+
+      <section id="apply" className="mt-24 bg-white rounded-xl p-8 shadow-md max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Apply for a Loan</h2>
+        <form className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Full Name</label>
+            <input type="text" className="mt-1 w-full border-gray-300 rounded-md shadow-sm" placeholder="Your name" required />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input type="tel" className="mt-1 w-full border-gray-300 rounded-md shadow-sm" placeholder="+91-XXXXXXX" required />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" className="mt-1 w-full border-gray-300 rounded-md shadow-sm" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Loan Type</label>
+            <select className="mt-1 w-full border-gray-300 rounded-md shadow-sm">
+              <option>Personal Loan</option>
+              <option>Business Loan</option>
+              <option>Home Loan</option>
+              <option>Education Loan</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Loan Amount</label>
+            <input type="number" className="mt-1 w-full border-gray-300 rounded-md shadow-sm" placeholder="Amount in INR" required />
+          </div>
+          <Button type="submit" className="w-full py-2 text-lg">Submit Application</Button>
+        </form>
+      </section>
+
+      <section id="contact" className="mt-24 bg-white rounded-xl p-8 shadow-md max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+        <div className="space-y-4">
+          <p className="flex items-center gap-2 text-gray-600"><Phone /> +91-9876543210</p>
+          <p className="flex items-center gap-2 text-gray-600"><Mail /> support@credinest.in</p>
+        </div>
+      </section>
+
+      <footer className="mt-24 text-center text-gray-500 text-sm border-t border-gray-200 py-4">
+        © 2025 Credinest. All rights reserved.
+      </footer>
+    </div>
+  );
+}
